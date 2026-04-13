@@ -1,0 +1,79 @@
+<!doctype html>
+
+<html lang="pl">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../utility/style.css" type="text/css" />
+	<title>PAI</title>
+	<meta name="author" content="zsel" />
+	<meta name="copyright" content="Copyright owner" />
+	<script src="../utility/javascript.js" defer></script>
+</head>
+<body>
+	<div id="page">
+		 <div id="page">
+        <nav>
+            <div class="dropdown">
+            <button class="dropbtn" id="menuButton">Menu</button>
+            <div class="dropdown-content" id="dropdownMenu">
+            <a href="../index.html">Strona główna</a>
+            <a href="zmienne.html">Zmienne</a>
+            <a href="oknaWindow.html">Okna Dialogowe</a>
+            <a href="instrukcje_warunkowe.html">Instrukcje warunkowe</a>
+            <a href="trojmian_kwadratowy.html">Trójmian Kwadratowy</a>
+            <a href="liczby_szczesliwe.html">Liczby szczęśliwe</a>
+            <a href="liczby_armstronga.html">Liczby Armstronga</a>
+            <a href="formularz.html">Formularz</a>
+            <a href="tabela_js.html">Tabela JS</a>
+            <a href="zdarzenia.html">Zdarzenia</a>
+			<a href="dom-window.html">Model DOM metoda window</a>
+			<a href="dom_history_location_navigator.html">Model DOM metoda history, location, navigator</a>
+			</nav>
+  </div>
+</div>ntent">
+			<article>
+				<p class="data">26.01.2026</p>
+				<hr />
+				<div>
+                   <p>Utwórz podstronę trojkaty.html zawierającą skrypt obliczający pole powierzchni i obwód trójkąta oraz sprawdzający czy trójkąt jest prostokątny lub równoramienny. W skrypcie uwzględnij walidację sprawdzającą czy została wprowadzona cyfra większa od zera oraz czy wprowadzone dane spełniają warunek trójkąta. Dane zwróć na stronę z odpowiednim opisem.</p>
+				   <script type = "text/javascript">
+					function pole(){
+						let a = parseFloat(window.prompt("Podaj dlugosc pierwszego boku: "))
+						let b = parseFloat(window.prompt("Podaj dlugosc drugiogo boku: "))
+						let c = parseFloat(window.prompt("Podaj dlugosc trzeciego boku: "))
+						if(a<0 || b<0 || c<0){
+							window.alert("Zadna z liczb nie moze byc rowna zero");
+						}
+						else{
+							if(a==b && a==c){
+								window.alert("Trojkat jest rownoboczny")
+							}
+							let boki =[a, b, c].sort();
+							let przyprostokanta1 = boki[0];
+							let przyprostokanta2 = boki[1];
+							let przeciwprostokatna = boki[2];
+							if(przyprostokanta1**2 + przyprostokanta2**2 === przeciwprostokatna**2){
+								window.alert("Trojkat jest prostokatny")
+							}
+							if(a + b > c && a + c > b && b + c > a){
+								let p = (a+b+c)/2;
+								let P = Math.sqrt(p*(p-a)*(p-b)*(p-c));
+								window.alert("pole to: " + P.toFixed(2) + "cm² a obwod to: " +(a+b+c)+ "cm");
+							}
+							else{
+								window.alert("Z podanych bokow nie mozna zrobic trojkata!")
+							}
+					}
+				}
+				   </script>
+				   <p>Oblicz pole trójkątu</p>
+				   <input type="button" id="prompt" name="prompt" value="Sprawdź!" onclick="okno2()" class="button">
+                </div>
+				<hr />
+				<p class="autor">autor: Filip Nowakowski</p>
+			</article>
+		</section> 	
+	</div>
+	<footer>Zespół Szkół Elektrycznych we Włocławku</footer>
+</body>
+</html>

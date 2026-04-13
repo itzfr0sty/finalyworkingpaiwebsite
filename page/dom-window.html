@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../utility/style.css" type="text/css" />
+    <style>
+       
+    </style>
+    <title>PAI</title>
+    <meta name="author" content="zsel" />
+    <meta name="copyright" content="Copyright owner" />
+    <script src="../utility/javascript.js" defer></script>
+</head>
+<body>
+    <div id="page">
+        <nav>
+            <div class="dropdown">
+            <button class="dropbtn" id="menuButton">Menu</button>
+            <div class="dropdown-content" id="dropdownMenu">
+            <a href="../index.html">Strona główna</a>
+            <a href="zmienne.html">Zmienne</a>
+            <a href="oknaWindow.html">Okna Dialogowe</a>
+            <a href="instrukcje_warunkowe.html">Instrukcje warunkowe</a>
+            <a href="trojmian_kwadratowy.html">Trójmian Kwadratowy</a>
+            <a href="liczby_szczesliwe.html">Liczby szczęśliwe</a>
+            <a href="liczby_armstronga.html">Liczby Armstronga</a>
+            <a href="formularz.html">Formularz</a>
+            <a href="tabela_js.html">Tabela JS</a>
+            <a href="zdarzenia.html">Zdarzenia</a>
+            <a href="dom-window.html">Model DOM metoda window</a>
+            <a href="dom_history_location_navigator.html">Model DOM metoda history, location, navigator</a>
+  </div>
+</div>
+        </nav>
+        <section id="content">
+            <article>
+                <p class="data">23.02.2026</p>
+                <hr />
+                <div class="my-element" id="my-div">
+                    <h1>Model DOM metoda window</h1>
+                    <p>
+                       Wyświetl rozmiary okna przeglądarki.
+Wyświetl stronę szkolną w nowym oknie przeglądarki z paskiem nawigacyjnym i bez paska adresu i paska menu - rozmiar okna 600px x 600px w pozycji 50 px od góry i 200px od lewej.
+Po 5 sekundach przesuń okno do pozycji 10,10 i zmień rozmiar okna na 1200px x 800px oraz usuń paski przewijania.
+Po 5 sekundach zamknij okno.
+                    </p>
+                    <script type="text/javascript">
+                        var windowDimensions = "Rozmiary okna przeglądarki: " + window.innerWidth + "x" + window.innerHeight + " px";
+                        var dimensionsElement = document.createElement("p");
+                        dimensionsElement.innerHTML = "<strong>" + windowDimensions + "</strong>";
+                        document.getElementById("my-div").appendChild(dimensionsElement);
+                        var newWindow = window.open("https://zsel.edu.pl/", "newWindow", "toolbar=yes,location=no,menubar=no,scrollbars=no,resizable=yes,width=600,height=600,top=50,left=200");
+                        
+                        setTimeout(function() {
+                            if (newWindow && !newWindow.closed) {
+                                try {
+                                    newWindow.resizeTo(1200, 800);
+                                    newWindow.moveTo(10, 10);
+                                } catch (e) {
+                                    console.error("Nie można zmienić rozmiaru lub pozycji okna: " + e.message);
+                                }
+                            }; 
+                        }, 5000);
+                        setTimeout(function() {
+                            if (newWindow && !newWindow.closed) {
+                                newWindow.close();
+                            }
+                        }, 10000);
+                    </script>
+                </div>
+                <hr />
+                <p class="autor">autor: Filip Nowakowski</p>
+            </article>
+        </section>
+    </div>
+    <footer>Zespół Szkół Elektrycznych we Włocławku</footer>
+</body>
+</html>

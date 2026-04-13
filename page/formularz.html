@@ -1,0 +1,169 @@
+<!doctype html>
+
+<html lang="pl">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../utility/style.css" type="text/css" />
+	<title>PAI</title>
+	<meta name="author" content="zsel" />
+	<meta name="copyright" content="Copyright owner" />
+	<script src="../utility/javascript.js" defer></script>
+</head>
+<body>
+	<div id="page">
+		 <div id="page">
+        <nav>
+            <div class="dropdown">
+            <button class="dropbtn" id="menuButton">Menu</button>
+            <div class="dropdown-content" id="dropdownMenu">
+            <a href="../index.html">Strona główna</a>
+            <a href="zmienne.html">Zmienne</a>
+            <a href="oknaWindow.html">Okna Dialogowe</a>
+            <a href="instrukcje_warunkowe.html">Instrukcje warunkowe</a>
+            <a href="trojmian_kwadratowy.html">Trójmian Kwadratowy</a>
+            <a href="liczby_szczesliwe.html">Liczby szczęśliwe</a>
+            <a href="liczby_armstronga.html">Liczby Armstronga</a>
+            <a href="formularz.html">Formularz</a>
+            <a href="tabela_js.html">Tabela JS</a>
+            <a href="zdarzenia.html">Zdarzenia</a>
+			<a href="dom-window.html">Model DOM metoda window</a>
+			<a href="dom_history_location_navigator.html">Model DOM metoda history, location, navigator</a>
+			</nav>
+  </div>
+</div>
+		<section id="content">
+			<article>
+				<p class="data">09.03.2026</p>
+				<hr />
+				<div>
+                    <h1>Formularz Osobowy</h1>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Imię:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="surname">Nazwisko:</label>
+                            <input type="text" id="surname" name="surname" placeholder="Kowalski" required>
+                        </div>
+
+                        <div class="form-group gender-group">
+                            <label>Płeć:</label>
+                            <div class="gender-options">
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="male" required>
+                                    <span class="radio-dot"></span>
+                                    <span class="radio-text">Mężczyzna</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="female" required>
+                                    <span class="radio-dot"></span>
+                                    <span class="radio-text">Kobieta</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="other" required>
+                                    <span class="radio-dot"></span>
+                                    <span class="radio-text">Inne</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="street">Ulica:</label>
+                            <input type="text" id="street" name="street" placeholder="Okrężna" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="houseNumber">Numer domu:</label>
+                            <input type="text" id="houseNumber" name="houseNumber" placeholder="21" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="apartmentNumber">Numer mieszkania:</label>
+                            <input type="text" id="apartmentNumber" name="apartmentNumber" placeholder="37">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="postCode">Kod pocztowy:</label>
+                            <input type="text" id="postCode" name="postCode" pattern="[0-9]{2}-[0-9]{3}" placeholder="XX-XXX" required>
+                            <small id="postCodeError" style="color: red; display: none;">Numer musi mieć format: XX-XXX (np. 12-345)</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="city">Miasto:</label>
+                            <input type="text" id="city" name="city" placeholder="Włocławek" required>
+                        </div>
+
+                        <button type="submit" class="btn-submit">Wyślij formularz</button>
+                        <button type="reset" class="btn-reset">Wyczyść formularz</button>
+                    </form>
+                    <h2>Wynik</h2>
+                    <div id="result"></div>
+                </div>
+				<hr />
+				<p class="autor">autor: Filip Nowakowski</p>
+			</article>
+		</section> 	
+	</div>
+	<footer>Zespół Szkół Elektrycznych we Włocławku</footer>
+
+	<script>
+		function capitalizeFirstLetter(str) {
+			return str.charAt(0).toUpperCase() + str.slice(1);
+		}
+		const postCodeInput = document.getElementById('postCode');
+		const postCodeError = document.getElementById('postCodeError');
+		postCodeInput.addEventListener('change', function() {
+			const pattern = /^[0-9]{2}-[0-9]{3}$/;
+			if (!pattern.test(this.value) && this.value !== '') {
+				postCodeError.style.display = 'block';
+			} else {
+				postCodeError.style.display = 'none';
+			}
+		});
+		
+		document.getElementById('contactForm').addEventListener('submit', function(event) {
+			event.preventDefault();
+			const pattern = /^[0-9]{2}-[0-9]{3}$/;
+			if (!pattern.test(postCodeInput.value)) {
+				postCodeError.style.display = 'block';
+				return;
+			}
+			postCodeError.style.display = 'none';
+			const formData = {
+				name: capitalizeFirstLetter(document.getElementById('name').value.trim()),
+				surname: capitalizeFirstLetter(document.getElementById('surname').value.trim()),
+				gender: document.querySelector('input[name="gender"]:checked').value,
+				street: capitalizeFirstLetter(document.getElementById('street').value.trim()),
+				houseNumber: document.getElementById('houseNumber').value.trim(),
+				apartmentNumber: document.getElementById('apartmentNumber').value.trim(),
+				postCode: document.getElementById('postCode').value.trim(),
+				city: capitalizeFirstLetter(document.getElementById('city').value.trim())
+			};
+			let greeting = '';
+			if (formData.gender === 'male') {
+				greeting = 'Szanowny Pan: ';
+			} else if (formData.gender === 'female') {
+				greeting = 'Szanowna Pani: ';
+			}
+			const addressLine = 'ul. ' + formData.street + ' ' + formData.houseNumber + 
+				(formData.apartmentNumber ? '/' + formData.apartmentNumber : '');
+			
+			const resultDiv = document.getElementById('result');
+			resultDiv.innerHTML = `
+				<div style="margin-top: 20px; padding: 15px; background-color: #f0f0f0; border-radius: 5px;">
+					<h2>Podsumowanie formularza:</h2>
+					<p><strong>${greeting}${formData.name} ${formData.surname}</strong></p>
+					<p><strong>Adres:</strong> ${addressLine}, ${formData.postCode} ${formData.city}</p>
+				</div>
+			`;
+		});
+		
+		document.getElementById('contactForm').addEventListener('reset', function() {
+			document.getElementById('result').innerHTML = '';
+			postCodeError.style.display = 'none';
+		});
+	</script>
+</body>
+</html>

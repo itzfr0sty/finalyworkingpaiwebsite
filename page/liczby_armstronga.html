@@ -1,0 +1,76 @@
+<!doctype html>
+
+<html lang="pl">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../utility/style.css" type="text/css" />
+	<title>PAI</title>
+	<meta name="author" content="zsel" />
+	<meta name="copyright" content="Copyright owner" />
+   <script src="../utility/javascript.js" defer></script>
+</head>
+<body>
+	 <div id="page">
+        <nav>
+            <div class="dropdown">
+            <button class="dropbtn" id="menuButton">Menu</button>
+            <div class="dropdown-content" id="dropdownMenu">
+            <a href="../index.html">Strona główna</a>
+            <a href="zmienne.html">Zmienne</a>
+            <a href="oknaWindow.html">Okna Dialogowe</a>
+            <a href="instrukcje_warunkowe.html">Instrukcje warunkowe</a>
+            <a href="trojmian_kwadratowy.html">Trójmian Kwadratowy</a>
+            <a href="liczby_szczesliwe.html">Liczby szczęśliwe</a>
+            <a href="liczby_armstronga.html">Liczby Armstronga</a>
+            <a href="formularz.html">Formularz</a>
+            <a href="tabela_js.html">Tabela JS</a>
+            <a href="zdarzenia.html">Zdarzenia</a>
+            <a href="dom-window.html">Model DOM metoda window</a>
+            <a href="dom_history_location_navigator.html">Model DOM metoda history, location, navigator</a>
+			</nav>
+  </div>
+</div>
+		<section id="content">
+			<article>
+				<p class="data">23.02.2026</p>
+				<hr />
+				<div>
+                    <h1>Sprawdzanie czy liczba jest liczbą Armstronga</h1>
+                    <p>
+                       Liczba Armstronga trzycyfrowa jest liczbą całkowitą, dla której suma sześcianów jej cyfr jest równa samej liczbie. Na przykład 371 to liczba Armstronga, ponieważ 3**3 + 7**3 + 1**3 = 371.
+                    </p>
+                    <img src="../image/numer armstronga.png" alt="">
+                    <script type="text/javascript">
+                        function okno2(){
+                            let a = window.prompt("Podaj trzycyfrową liczbe do sprawdzenia czy jest liczbą Armstronga: ");
+                            if(a>99 && a<1000){
+                                let liczby = a.split('');
+                                let suma = 0;
+                                for(let i = 0; i<liczby.length; i++){
+                                    liczby[i] = parseInt(liczby[i])**3;
+                                    suma = suma + parseInt(liczby[i]);
+                                }
+                                if(a == suma){
+                                    window.alert("Liczba jest liczbą Armstronga");
+                                }
+                                else{
+                                    window.alert("Liczba nie jest liczbą Armstronga");
+                                }
+                            }
+                            else{
+                                window.alert("Liczba nie jest 3 cyfrowa!")
+                            }
+                        }
+                    </script>
+                    <p>Sprawdź czy twoja liczba jest liczbą Armstronga</p>
+                    <input type="button" id="prompt" name="prompt" value="Sprawdź!" onclick="okno2()" class="button">
+
+                </div>
+				<hr />
+				<p class="autor">autor: Filip Nowakowski</p>
+			</article>
+		</section> 	
+	</div>
+	<footer>Zespół Szkół Elektrycznych we Włocławku</footer>
+</body>
+</html>

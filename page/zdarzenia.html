@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../utility/style.css" type="text/css" />
+    <style>
+       
+    </style>
+    <title>PAI</title>
+    <meta name="author" content="zsel" />
+    <meta name="copyright" content="Copyright owner" />
+    <script src="../utility/javascript.js" defer></script>
+</head>
+<body>
+    <div id="page">
+        <nav>
+            <div class="dropdown">
+            <button class="dropbtn" id="menuButton">Menu</button>
+            <div class="dropdown-content" id="dropdownMenu">
+            <a href="../index.html">Strona główna</a>
+            <a href="zmienne.html">Zmienne</a>
+            <a href="oknaWindow.html">Okna Dialogowe</a>
+            <a href="instrukcje_warunkowe.html">Instrukcje warunkowe</a>
+            <a href="trojmian_kwadratowy.html">Trójmian Kwadratowy</a>
+            <a href="liczby_szczesliwe.html">Liczby szczęśliwe</a>
+            <a href="liczby_armstronga.html">Liczby Armstronga</a>
+            <a href="formularz.html">Formularz</a>
+            <a href="tabela_js.html">Tabela JS</a>
+            <a href="zdarzenia.html">Zdarzenia</a>
+            <a href="dom-window.html">Model DOM metoda window</a>
+            <a href="dom_history_location_navigator.html">Model DOM metoda history, location, navigator</a>
+  </div>
+</div>
+        </nav>
+        <section id="content">
+            <article>
+                <p class="data">23.02.2026</p>
+                <hr />
+                <div class="my-element" id="my-div">
+                    <h1>Zdarzenia</h1>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat incidunt aliquid maiores inventore laboriosam amet est non dolorem reprehenderit, excepturi facilis porro consectetur consequatur tenetur obcaecati ea blanditiis architecto quas! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis repellendus ipsum, accusantium dolorem assumenda velit aliquid eaque veniam. Magnam repellat eum nihil commodi, excepturi ducimus ullam expedita deleniti consequatur vel.
+                    </p>
+                    <script type="text/javascript">
+                        function changeBackground(event) {
+                            const rect = event.target.getBoundingClientRect();
+                            const x = event.clientX - rect.left;
+                            const y = event.clientY - rect.top;
+                            const width = rect.width;
+                            const height = rect.height;
+                            const xPercent = x / width;
+                            const yPercent = y / height;
+                            const hue = 200;
+                            event.target.style.background = `radial-gradient(circle at ${xPercent * 70}% ${yPercent * 70}%, hsl(${hue}, 100%, 70%) 20%, transparent 80%)`;
+                        }
+
+                        function setupEvents() {
+                            const element = document.getElementById("my-div");
+                            element.addEventListener('mouseenter', () => {
+                                element.style.backgroundColor = "lightcoral";
+                            });
+                            element.addEventListener('mouseleave', () => {
+                                element.style.backgroundColor = "";
+                            });
+
+                            const secondElement = document.getElementById("second-div");
+                            secondElement.addEventListener('mousemove', changeBackground);
+                            secondElement.addEventListener('mouseleave', () => {
+                                secondElement.style.backgroundColor = "";
+                            });
+                        }
+                        window.onload = setupEvents;
+                    </script>
+                </div>
+                <div class="second-div" id="second-div">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet, ad harum reprehenderit id eligendi est quas numquam vero, officia cum exercitationem inventore modi earum tempora ea officiis odio impedit quo? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero corporis quisquam quia delectus iusto explicabo fugiat officia, nostrum repellat sequi? Laudantium, explicabo. Aliquid eaque minima et, hic illum impedit alias.</p>
+                </div>
+                <script type="text/javascript">
+                    function toggleMenu(event) {
+                        event.preventDefault();
+                        const li = event.target.closest('li');
+                        if (!li) return;
+                        document.querySelectorAll('#click-menu li.open').forEach(openLi => {
+                            if (openLi !== li) {
+                                openLi.classList.remove('open');
+                            }
+                        });
+                        li.classList.toggle('open');
+                    }
+                    function toggleMenuAnimated(event) {
+                        toggleMenu(event);
+                    }
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const menuItems = document.querySelectorAll('#click-menu li');
+                        menuItems.forEach(item => {
+                            if (item.querySelector('ul')) {
+                                item.addEventListener('click', toggleMenuAnimated);
+                            }
+                        });
+                    });
+                </script>
+                <hr />
+                <p class="autor">autor: Filip Nowakowski</p>
+            </article>
+        </section>
+    </div>
+    <footer>Zespół Szkół Elektrycznych we Włocławku</footer>
+</body>
+</html>

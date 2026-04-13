@@ -1,0 +1,81 @@
+<!doctype html>
+
+<html lang="pl">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../utility/style.css" type="text/css" />
+	<title>PAI</title>
+	<meta name="author" content="zsel" />
+	<meta name="copyright" content="Copyright owner" />
+    <script src="../utility/javascript.js" defer></script>
+</head>
+<body>
+	<div id="page">
+		 <div id="page">
+        <nav>
+            <div class="dropdown">
+            <button class="dropbtn" id="menuButton">Menu</button>
+            <div class="dropdown-content" id="dropdownMenu">
+            <a href="../index.html">Strona główna</a>
+            <a href="zmienne.html">Zmienne</a>
+            <a href="oknaWindow.html">Okna Dialogowe</a>
+            <a href="instrukcje_warunkowe.html">Instrukcje warunkowe</a>
+            <a href="trojmian_kwadratowy.html">Trójmian Kwadratowy</a>
+            <a href="liczby_szczesliwe.html">Liczby szczęśliwe</a>
+            <a href="liczby_armstronga.html">Liczby Armstronga</a>
+            <a href="formularz.html">Formularz</a>
+            <a href="tabela_js.html">Tabela JS</a>
+            <a href="zdarzenia.html">Zdarzenia</a>
+            <a href="dom-window.html">Model DOM metoda window</a>
+            <a href="dom_history_location_navigator.html">Model DOM metoda history, location, navigator</a>
+  </div>
+</div>
+        </nav>
+		<section id="content">
+			<article>
+				<p class="data">16.03.2026</p>
+				<hr />
+				<div>
+                    <h1>Tworzenie tabeli w JS</h1>
+                      <form id="tableForm">
+                        <div class="form-group">
+                            <label for="name">Liczba Wierszy:</label>
+                            <input type="text" id="rn" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="surname">Liczba Kolumn:</label>
+                            <input type="text" id="cn" name="surname" required>
+                        </div>
+                        <input type="button" value="Stwórz Tabelę" onclick="createTable()" class="button">
+                    </form>
+                    <h2>Wynik</h2>
+                    <div class="tableContainer">
+                   <table id="myTable"  class="table"></table>
+                   </div>
+                </div>
+				<hr />
+				<p class="autor">autor: Filip Nowakowski</p>
+			</article>
+		</section> 	
+	</div>
+	<footer>Zespół Szkół Elektrycznych we Włocławku</footer>
+
+	<script>
+	function createTable(){
+    const rn = parseInt(document.getElementById('rn').value);
+    const cn = parseInt(document.getElementById('cn').value);
+    let r = 0;
+    for(let i; r<parseInt(rn, 10); r++){
+        var x=document.getElementById('myTable').insertRow(r);
+        var c = 0;
+        for(let j; c<parseInt(cn, 10); c++){
+            var y = x.insertCell(c);
+            y.innerHTML = "Row-"+r+" Column-"+c;
+            y.className = "table-cell";
+        }
+    }
+    }
+	</script>
+</body>
+</html>

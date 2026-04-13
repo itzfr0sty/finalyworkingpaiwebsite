@@ -1,0 +1,94 @@
+<!doctype html>
+
+<html lang="pl">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../utility/style.css" type="text/css" />
+	<title>PAI</title>
+	<meta name="author" content="zsel" />
+	<meta name="copyright" content="Copyright owner" />
+    <script src="../utility/javascript.js" defer></script>
+</head>
+<body>
+	 <div id="page">
+        <nav>
+            <div class="dropdown">
+            <button class="dropbtn" id="menuButton">Menu</button>
+            <div class="dropdown-content" id="dropdownMenu">
+            <a href="../index.html">Strona główna</a>
+            <a href="zmienne.html">Zmienne</a>
+            <a href="oknaWindow.html">Okna Dialogowe</a>
+            <a href="instrukcje_warunkowe.html">Instrukcje warunkowe</a>
+            <a href="trojmian_kwadratowy.html">Trójmian Kwadratowy</a>
+            <a href="liczby_szczesliwe.html">Liczby szczęśliwe</a>
+            <a href="liczby_armstronga.html">Liczby Armstronga</a>
+            <a href="formularz.html">Formularz</a>
+            <a href="tabela_js.html">Tabela JS</a>
+            <a href="zdarzenia.html">Zdarzenia</a>
+            <a href="dom-window.html">Model DOM metoda window</a>
+            <a href="dom_history_location_navigator.html">Model DOM metoda history, location, navigator</a>
+  </div>
+</div>
+		</nav>
+		<section id="content">
+			<article>
+				<p class="data">23.02.2026</p>
+				<hr />
+				<div>
+                    <h1>Obliczanie trojmianu kwadratowego</h1>
+                    <p>
+                       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique, animi quam! Exercitationem, ducimus obcaecati ipsam aspernatur a doloribus at repellendus velit sit quis, et reprehenderit! Iste nulla fuga minus numquam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quasi, quod, magni unde omnis commodi dicta accusamus porro eum quibusdam veniam voluptates similique possimus voluptas. Minima atque aperiam eveniet eaque.
+                    </p>
+                    <script type="text/javascript">
+                        function okno2(){
+                            let a = window.prompt("Podaj pierwsza wartosc trojmianu kwadratowego: ");
+                            let b = window.prompt("Podaj druga wartosc trojmianu kwadratowego: ");
+                            let c = window.prompt("Podaj trzecia wartosc trojmianu kwadratowego: ");
+                            if(isNaN(a) || isNaN(b) || isNaN(c)){
+                                window.alert("Podane dane są nie prawidlowe");
+                                return 0;
+                            }
+                            if (a!=0){
+                                let delta = b*b-(4*a*c);
+                                window.alert("Delta wynosi: " + delta);
+                                if(delta>0){
+                                    let x1 = (b*(-1)-Math.sqrt(delta))/(2*a);
+                                    let x2 = (b*(-1)+Math.sqrt(delta))/(2*a);
+                                    window.alert("Wynik to: " +x1+ "lub: " +x2);
+                                }
+                                if(delta=0){
+                                    let x0 = b*(-1)/2*a;
+                                    window.alert("wynik to: " + x0);
+                                }
+                                if(delta<0){
+                                    window.alert("Ten trojmian nie ma miejsc zerowych!");
+                                }
+                                if(a>0){
+                                    window.alert("Parabola jest skierowana ramionami w gore");
+                                }
+                                else{
+                                    window.alert("Parabola jest skierowana ramionami w dol");
+                                }
+                                let p = b*(-1)/2*a;
+                                let q = delta*(-1)/4*a;
+                                window.alert("Wierzcholek paraboli znajduje sie na wspolrzednych: (" +p+","+q+")");
+                            }
+                            else{
+                                window.alert("Wyznacznik trojmianu kwadratowego nie moze byc rowny zero!")
+                                return 0;
+                            }
+                            
+                        }
+                    </script>
+                    <p>Oblicz trójmian kwadratowy</p>
+                    <input type="button" id="prompt" name="prompt" value="Sprawdź!" onclick="okno2()" class="button">
+
+                </div>
+				<hr />
+				<p class="autor">autor: Filip Nowakowski</p>
+			</article>
+		</section> 	
+	</div>
+	<footer>Zespół Szkół Elektrycznych we Włocławku</footer>
+</body>
+</html>

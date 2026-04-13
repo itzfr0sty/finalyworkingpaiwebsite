@@ -1,0 +1,77 @@
+<!doctype html>
+
+<html lang="pl">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../utility/style.css" type="text/css" />
+	<title>PAI</title>
+	<meta name="author" content="zsel" />
+	<meta name="copyright" content="Copyright owner" />
+    <script src="../utility/javascript.js" defer></script>
+</head>
+<body>
+	 <div id="page">
+        <nav>
+            <div class="dropdown">
+            <button class="dropbtn" id="menuButton">Menu</button>
+            <div class="dropdown-content" id="dropdownMenu">
+            <a href="../index.html">Strona główna</a>
+            <a href="zmienne.html">Zmienne</a>
+            <a href="oknaWindow.html">Okna Dialogowe</a>
+            <a href="instrukcje_warunkowe.html">Instrukcje warunkowe</a>
+            <a href="trojmian_kwadratowy.html">Trójmian Kwadratowy</a>
+            <a href="liczby_szczesliwe.html">Liczby szczęśliwe</a>
+            <a href="liczby_armstronga.html">Liczby Armstronga</a>
+            <a href="formularz.html">Formularz</a>
+            <a href="tabela_js.html">Tabela JS</a>
+            <a href="zdarzenia.html">Zdarzenia</a>
+            <a href="dom-window.html">Model DOM metoda window</a>
+            <a href="dom_history_location_navigator.html">Model DOM metoda history, location, navigator</a>
+			</nav>
+  </div>
+</div>
+		<section id="content">
+			<article>
+				<p class="data">23.02.2026</p>
+				<hr />
+				<div>
+                    <h1>Liczby szczęśliwe</h1>
+                    <p>
+                       Zaczynając od dowolnej dodatniej liczby całkowitej, zastąp ją sumą kwadratów jej cyfr i powtarzaj proces, aż liczba wyrówna się 1 (gdzie pozostanie), lub tak będzie się niekończenie powtarzać w cyklu, który nie zawiera 1. Te liczby dla których proces kończy się na 1, są liczbami szczęśliwymi, a te, które nie kończą się na 1, są liczbami nieszczęśliwymi (lub smutnymi liczbami)
+                    </p>
+                    <img src="../image/liczba szczesliwa.png" alt="">
+                    <script type="text/javascript">
+                        function okno2(){
+                        let a = window.prompt("Podaj liczbę do sprawdzenia: ");
+                        let liczba = parseInt(a);
+                        let seenNumbers = [];
+                        while (liczba !== 1 && !seenNumbers.includes(liczba)) {
+                            seenNumbers.push(liczba); 
+                            let digits = liczba.toString().split('');
+                            let suma = 0;
+                            for (let i = 0; i < digits.length; i++) {
+                                let digit = parseInt(digits[i]);
+                                suma += digit * digit;
+                            } 
+                            liczba = suma;
+                        }
+                        if (liczba === 1) {
+                            window.alert("Twoja liczba jest szczęśliwa");
+                        } else {
+                            window.alert("Twoja liczba nie jest szczęśliwa");
+                        }
+                            
+                        }
+                    </script>
+                    <p>Sprawdź czy podana liczba jest szczęśliwa</p>
+                    <input type="button" id="prompt" name="prompt" value="Sprawdź!" onclick="okno2()" class="button">
+
+                </div>
+				<hr />
+				<p class="autor">autor: Filip Nowakowski</p>
+			</article>
+		</section> 	
+	</div>
+	<footer>Zespół Szkół Elektrycznych we Włocławku</footer>
+</body>
+</html>

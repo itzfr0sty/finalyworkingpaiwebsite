@@ -1,0 +1,106 @@
+<!doctype html>
+
+<html lang="pl">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="utility/style.css" type="text/css" />
+	<title>PAI</title>
+	<meta name="author" content="zsel" />
+	<meta name="copyright" content="Copyright owner" />
+	<script src="utility/javascript.js" defer></script>
+</head>
+<body>
+	    <div id="page">
+        <nav>
+            <div class="dropdown">
+            <button class="dropbtn" id="menuButton">Menu</button>
+            <div class="dropdown-content" id="dropdownMenu">
+            <a href="index.html">Strona główna</a>
+            <a href="page/zmienne.html">Zmienne</a>
+            <a href="page/oknaWindow.html">Okna Dialogowe</a>
+            <a href="page/instrukcje_warunkowe.html">Instrukcje warunkowe</a>
+            <a href="page/trojmian_kwadratowy.html">Trójmian Kwadratowy</a>
+            <a href="page/liczby_szczesliwe.html">Liczby szczęśliwe</a>
+            <a href="page/liczby_armstronga.html">Liczby Armstronga</a>
+            <a href="page/formularz.html">Formularz</a>
+            <a href="page/tabela_js.html">Tabela JS</a>
+            <a href="page/zdarzenia.html">Zdarzenia</a>
+			<a href="page/dom-window.html">Model DOM metoda window</a>
+  </div>
+</div>
+        </nav>
+		<section id="content">
+			<article>
+				<p class="data">14. 09. 2022</p>
+				<hr />
+				<h2>JavaScript</h2>
+				<div>
+					<img class="wprowadzenie" src="image/co-to-jest-javascript.png" alt="co to jest javascript">				
+					<p>
+					JavaScript to skryptowy język programowania najczęściej wykorzystywany na witrynach internetowych. Jest on 
+					obsługiwany przez większość współczesnych przeglądarek WWW. Pozwala na umieszczanie w kodzie HTML lub 
+					XHTML skryptów wykonujących różne zadania — jakich, to już zależy od programisty. JavaScript to również 
+					jeden ze składników DHTML-a, czyli Dynamicznego HTML-a (z ang. Dynamic HTML). Można powiedzieć,  
+					że DHTML to technika tworzenia i modyfikacji elementów strony za pomocą języka skryptowego. </p>
+					<p>
+					Wszystko to pozwala na budowanie stron reagujących na działania użytkownika, sprawdzanie poprawności 
+					formularzy, obsługę elementów interfejsu strony (np. dynamicznych menu i przycisków), dynamiczne 
+					generowanie treści oraz realizację wielu innych efektów. Aby jednak tworzyć takie witryny, najpierw trzeba 
+					poznać sam JavaScript i sposoby pisania w nim skryptów. </p>
+					<p>
+					Historia tego języka sięga połowy lat 90. ubiegłego wieku, kiedy to w firmie Netscape powstał język LiveScript 
+					przemianowany następnie (w roku 1995) na JavaScript. Jego głównym twórcą był Brendan Eich. W kolejnych 
+					latach powstały kolejne wersje, język został też ustandaryzowany przez organizację ECMA (międzynarodowa 
+					organizacja standaryzacyjna, skrót pochodzi od dawnej nazwy European Computer Manufacturers Association). 
+					Pewne zamieszanie panuje w nazewnictwie, gdyż używane są nazwy JavaScript, ECMAScript oraz  
+					(dla produktów firmy Microsoft) JScript. Nazwa ECMAScript określa standard języka. Z kolei JavaScript czy 
+					JScript to implementacje tego standardu występujące w konkretnych produktach, najczęściej przeglądarkach. 
+					</p>
+					<img class="standard" src="image/js_logo.png" alt="logo javascript" />
+					<h3>Określanie typu skryptów</h3>
+					<p>
+					Dokument HTML, w którym mają być umieszczone skrypty, powinien zawierać w swoim nagłówku określenie 
+					domyślnego języka skryptowego. Co prawda nie jest to konstrukcja obligatoryjna, ale zalecana przez 
+					konsorcjum standaryzacyjne W3C. W celu zasygnalizowania domyślnego języka należy użyć znacznika <textarea rows="1" cols="10"><meta></textarea>
+					w schematycznej postaci: <br>
+					<textarea rows="1" cols="70"><meta http-equiv="Content-Script-Type" content="typ"> </textarea><br>
+					gdzie typ określa rodzaj języka. <br>
+					W przypadku języka JavaScript taka konstrukcja powinna mieć postać: <br>
+					<textarea rows="1" cols="70"><meta http-equiv="Content-Script-Type" content="text/javascript"></textarea>
+					</p>
+					<h3>Osadzanie skryptów</h3>
+					<h4>Skrypty osadzone</h4>
+					<p>
+					Skrypty JavaScript mogą być umieszczane wewnątrz kodu (X)HMTL — mówimy wtedy o skryptach osadzonych. 
+					Umieszczenie skryptu w kodzie HTML polega na użyciu znacznika <br> <textarea rows="1" cols="50"><script></script></textarea><br>  którego schematyczna postać 
+					jest następująca: <br>
+					<textarea cols="50" rows="3"><script type="typ"> 
+tutaj kod skryptu 
+</script></textarea> <br>
+					Parametr type jest obligatoryjny, o ile dokument ma być zgodny ze specyfikacją HTML,  
+					i 
+					powinien wskazywać na język skryptu; w przypadku skryptów JavaScript powinien to być ciąg znaków: 
+					text/javascript: 
+					</p>
+					<h4>Skrypty zewnętrzene</h4>
+					<p>
+					Drugą metodą umieszczenia skryptu w kodzie jest zapisanie go w oddzielnym pliku i użycie znacznika <textarea rows="1" cols="20"><script></script></textarea>
+					z parametrem src, w ogólnej postaci: <br>
+					<textarea rows="2" cols="60"><script type="text/javascript" src="lokalizacja skryptu">
+</script></textarea><br>
+					Plik ze skryptem może mieć dowolną nazwę, zwykle przyjmuje się jednak, że ma ona rozszerzenie js. 
+					Przykładowo: aby umieścić w kodzie HTML skrypt znajdujący się w pliku skrypt.js w katalogu skrypty  
+					na serwerze http://mojadomena.com, należy zastosować konstrukcję: <br>
+					<textarea rows="3" cols="50"><script type="text/javascript" src="http://nazwa.domeny/skrypty/skrypt.js"> 
+</script> </textarea>
+					</p>
+				</div>
+				<p class="autor">autor: Lorem ipsum</p>
+			</article>
+		</section> 
+		
+	</div>
+	<script src="utility/javascript.js" defer></script>
+</body>
+<footer>Zespół Szkół Elektrycznych we Włocławku</footer>
+</html>

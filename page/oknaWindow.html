@@ -1,0 +1,94 @@
+<!doctype html>
+
+<html lang="pl">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../utility/style.css" type="text/css" />
+	<title>PAI</title>
+	<meta name="author" content="zsel" />
+	<meta name="copyright" content="Copyright owner" />
+   <script src="../utility/javascript.js" defer></script>
+</head>
+<body>
+	 <div id="page">
+        <nav>
+            <div class="dropdown">
+            <button class="dropbtn" id="menuButton">Menu</button>
+            <div class="dropdown-content" id="dropdownMenu">
+            <a href="../index.html">Strona główna</a>
+            <a href="zmienne.html">Zmienne</a>
+            <a href="oknaWindow.html">Okna Dialogowe</a>
+            <a href="instrukcje_warunkowe.html">Instrukcje warunkowe</a>
+            <a href="trojmian_kwadratowy.html">Trójmian Kwadratowy</a>
+            <a href="liczby_szczesliwe.html">Liczby szczęśliwe</a>
+            <a href="liczby_armstronga.html">Liczby Armstronga</a>
+            <a href="formularz.html">Formularz</a>
+            <a href="tabela_js.html">Tabela JS</a>
+            <a href="zdarzenia.html">Zdarzenia</a>
+            <a href="dom-window.html">Model DOM metoda window</a>
+            <a href="dom_history_location_navigator.html">Model DOM metoda history, location, navigator</a>
+			</nav>
+  </div>
+</div>
+		<section id="content">
+			<article>
+				<p class="data">26.01.2026</p>
+				<hr />
+				<div>
+                    <h1>Okna Dialogowe</h1>
+                    <p>
+                         Czym są okna dialogowe? Okno dialogowe z ang. popup, czyli wyskakujące okno, często wykorzystywane w testowych skryptach, lecz w prawdziwych aplikacjach nie powinno się ich zbyt często używać, ponieważ mogą nieco irytować użytkownika witryny.
+                    </p>
+                    <hr />
+                    <h2>Metoda ALERT</h2>
+                    <p>
+                        Metoda alert powoduje wyświetlenie okna dialogowego ze zdefiniowaną zawartością. Podobnie jak w przypadku document.write, można wyświetlać zarówno ciągi znaków (które muszą być ujęte w znaki cudzysłowu lub apostrofu), jak i wartości liczbowe oraz zawartość zmiennych.
+                    </p>
+                    <script type="text/javascript">
+                        function okno(){
+                            window.alert("test")
+                        }
+                    </script>
+                    <input type="button" id="prompt" name="prompt" value="Sprawdź!" onclick="okno2()" class="button">
+                    <hr />
+                    <h2>Metoda CONFIRM</h2>
+                    <p>
+                        Metoda confirm wyświetla okno dialogowe zawierające przyciski OK i Anuluj (Cancel). Postać tego okna będzie podobna we wszystkich przeglądarkach.Metoda pozwala stwierdzić, który przycisk został kliknięty przez użytkownika, zwraca bowiem wartość true, jeśli wybrany został przycisk OK, oraz false, jeśli był to przycisk Anuluj bądź okno dialogowe zostało zamknięte w inny sposób.
+                    </p>
+                    <script type="text/javascript">
+                        function okno1(){
+                            let result = window.confirm("Wróć na stronę główną");
+                            if (result == true){
+                                window.location.href = "../index.html";
+                            }
+                        }
+                    </script>
+                    <input type="button" id="prompt" name="prompt" value="Sprawdź!" onclick="okno2()" class="button">
+                    <hr />
+                    <h2>Metoda Prompt</h2>
+                    <p>
+                        Metoda prompt wyświetla okno dialogowe z tekstem zdefiniowanym przez argument str, przyciskami OK i Anuluj (Cancel) oraz polem tekstowym, umożliwiające wprowadzenie danych przez użytkownika.W polu tekstowym wyświetlony zostanie ciąg defStr, o ile argument ten został podany w wywołaniu metody. Jeżeli nie zostanie podany, większość przeglądarek w polu tekstowym nie wyświetli nic (formalnie rzecz ujmując — wyświetli pusty ciąg znaków), jedynie Internet Explorer (nawet w najnowszych wersjach) wyświetla wtedy ciąg undefined.
+                    </p>
+                    <script type="text/javascript">
+                        function okno2(){
+                            let result = window.prompt("Podaj swoje imię","");
+                            if (result == null || result == ""){
+                                window.alert("Czemu nie podałeś swojego imienia?")                                
+                            }
+                            else{
+                                window.alert("Cześć " + result + ", witaj na mojej stronie!")
+                            }
+                        }
+                    </script>
+                    <input type="button" id="prompt" name="prompt" value="Sprawdź!" onclick="okno2()" class="button">
+
+                </div>
+				<hr />
+				<p class="autor">autor: Filip Nowakowski</p>
+                <a href="https://modestprogrammer.pl/okna-dialogowe-w-javascript" id="source">Link do źródła</a>
+			</article>
+		</section> 	
+	</div>
+	<footer>Zespół Szkół Elektrycznych we Włocławku</footer>
+</body>
+</html>

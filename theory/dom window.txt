@@ -1,0 +1,4 @@
+Wyświetl rozmiary okna przeglądarki.
+Wyświetl stronę szkolną w nowym oknie przeglądarki z paskiem nawigacyjnym i bez paska adresu i paska menu - rozmiar okna 600px x 600px w pozycji 50 px od góry i 200px od lewej.
+Po 5 sekundach przesuń okno do pozycji 10,10 i zmień rozmiar okna na 1200px x 800px oraz usuń paski przewijania.
+Po 5 sekundach zamknij okno.

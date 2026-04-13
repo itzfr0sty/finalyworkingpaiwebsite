@@ -1,0 +1,70 @@
+<!doctype html>
+
+<html lang="pl">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../utility/style.css" type="text/css" />
+	<title>PAI</title>
+	<meta name="author" content="zsel" />
+	<meta name="copyright" content="Copyright owner" />
+	<script src="../utility/javascript.js" defer></script>
+</head>
+<body>
+	 <div id="page">
+        <nav>
+            <div class="dropdown">
+            <button class="dropbtn" id="menuButton">Menu</button>
+            <div class="dropdown-content" id="dropdownMenu">
+            <a href="../index.html">Strona główna</a>
+            <a href="zmienne.html">Zmienne</a>
+            <a href="oknaWindow.html">Okna Dialogowe</a>
+            <a href="instrukcje_warunkowe.html">Instrukcje warunkowe</a>
+            <a href="trojmian_kwadratowy.html">Trójmian Kwadratowy</a>
+            <a href="liczby_szczesliwe.html">Liczby szczęśliwe</a>
+            <a href="liczby_armstronga.html">Liczby Armstronga</a>
+            <a href="formularz.html">Formularz</a>
+            <a href="tabela_js.html">Tabela JS</a>
+            <a href="zdarzenia.html">Zdarzenia</a>
+			<a href="dom-window.html">Model DOM metoda window</a>
+			<a href="dom_history_location_navigator.html">Model DOM metoda history, location, navigator</a>
+			</nav>
+  </div>
+</div>
+		<section id="content">
+			<article>
+				<p class="data">14. 09. 2022</p>
+				<hr />
+				<h2>Zmienne</h2>
+				<div>				
+					<p>
+					Zmienne to konstrukcje programistyczne pozwalające na przechowywanie danych. Każda zmienna charakteryzuje się swoją nazwą, dzięki której można się do niej odwoływać w kodzie skryptu, oraz typem, który określa, jakiego rodzaju dane może przechwywać. Zasay nazywania zmiennych mają też swoje zasady np.: <br>
+					Musi zaczynać się do litery lub znaku podkreślenia; <br>
+					może zawierać jednynie litery, cyfry, znaki dolara i znaki podkreślenia; <br>
+					może zawierać znaki narodowe (czyli np. polskie litery ą, ź czy ć). <br>
+					W nazwach można stosować też duże i małe litery ale będą one rozróżniane czyli zmienna 'liczba' i zmienna 'Liczba' to nie to samo. <br>
+					Zmienne tworzone są za pomocą słowa kluczowego <b>var</b>, po którym następuje nazwa zmiennej np.: <br>
+					<b>var zmienna;</b>
+					</p>
+					<p class="ala">
+					Należy pamiętać, że JavaScript nie wymaga formalnej deklaracji zmiennych przy użyciu słowa 
+					var, a zatem zmienna może zostać utworzona również przez wywołanie wyrażenia przypisującego jej 
+					wartość. Przykładowo pierwsze wystąpienie instrukcji (o ile zmienna liczba nie istnieje): <br>
+					<b>liczba = 100;</b>
+					</p>
+					<p>
+					Javascript od czasu pojawienia się ES6 (ECMAScript 2015) ma nowe sposoby deklaracji zmiennych za pomocą słów kluczowych <b>let</b> i <b>const</b>. Słowo <b>let</b> oznacza zmienną modyfikowalną, natomiast <b>const</b> oznacza zmienną stałą (taką w której po przypisaniu wartości nie da się jej zmodyfikować) <br>
+					</p>
+					<h3>Róznice między var a let/const</h3>
+					<p>Deklaracje let/const nie tylko wprowadziły stałe, ale także kilka różnic w stosunku do var. <br>
+					Pierwsza i najważniejsza róznica między let/const a var to zasięg zmiennych. W przypadku let/const zmienne mają zasięg blokowy czyli "od klamry do klamry" <br>
+					Zmienne deklarowane przy pomocy var mają natomiast zasięg funkcyjny, czyli ich zasięg mieści się w funkcji w której zostały zadeklarowane. <br>
+					Kolejna cecha rozróżniająca var od let/const jest taka, że zmienne var możemy ponownie deklarować, co jest niemożliwe w przypadku let i const.
+				</p>
+				</div>
+				<p class="autor">autor: Lorem ipsum</p>
+			</article>
+		</section> 
+		<footer>Zespół Szkół Elektrycznych we Włocławku</footer>
+	</div>
+</body>
+</html>
